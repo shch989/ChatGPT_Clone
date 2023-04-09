@@ -66,6 +66,11 @@ $ npm install --save Cookie
 
 ## Concurrently
 ```
-$ npm install concurrently
+$ npm install -D concurrently
+```
+
+## OpenAi
+```
+$ npm install openai
 ```
 

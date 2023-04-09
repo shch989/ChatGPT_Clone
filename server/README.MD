@@ -45,3 +45,21 @@ $ npm install --save body-parser
 ```
 $ npm install --save colors
 ```
+
+## BcryptJS
+
+```
+$ npm install --save bcryptjs
+```
+
+## Jsonwebtoken
+
+```
+$ npm install --save jsonwebtoken
+```
+
+## Cookie
+
+```
+$ npm install --save Cookie
+```

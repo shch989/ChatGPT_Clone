@@ -63,3 +63,9 @@ $ npm install --save jsonwebtoken
 ```
 $ npm install --save Cookie
 ```
+
+## Concurrently
+```
+$ npm install concurrently
+```
+

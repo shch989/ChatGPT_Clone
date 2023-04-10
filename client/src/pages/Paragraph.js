@@ -14,23 +14,23 @@ import {
   Card,
 } from "@mui/material";
 
-const Summary = () => {
+const Paragraph = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   //media
   const isNotMobile = useMediaQuery("(min-width: 1000px)");
   // states
   const [text, settext] = useState("");
-  const [summary, setSummary] = useState("");
+  const [para, setPara] = useState("");
   const [error, setError] = useState("");
 
   //register ctrl
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:8080/api/v1/openai/summary", { text });
+      const { data } = await axios.post("http://localhost:8080/api/v1/openai/paragraph", { text });
       console.log(data);
-      setSummary(data);
+      setPara(data);
     } catch (err) {
       console.log(error);
       if (err.response.data.error) {
@@ -58,7 +58,7 @@ const Summary = () => {
         </Alert>
       </Collapse>
       <form onSubmit={handleSubmit}>
-        <Typography variant="h3">Summarize Text</Typography>
+        <Typography variant="h3">Generate Paragraph</Typography>
 
         <TextField
           placeholder="add your text"
@@ -80,14 +80,14 @@ const Summary = () => {
           size="large"
           sx={{ color: "white", mt: 2 }}
         >
-          Submit
+          Generate
         </Button>
         <Typography mt={2}>
           not this tool ? <Link to="/">GO BACK</Link>
         </Typography>
       </form>
 
-      {summary ? (
+      {para ? (
         <Card
           sx={{
             mt: 4,
@@ -99,7 +99,7 @@ const Summary = () => {
             bgcolor: "background.default",
           }}
         >
-          <Typography p={2}>{summary}</Typography>
+          <Typography p={2}>{para}</Typography>
         </Card>
       ) : (
         <Card
@@ -122,7 +122,7 @@ const Summary = () => {
               lineHeight: "450px",
             }}
           >
-            Summary Will Apprea Here
+            Your Paragraph Will Apprea Here
           </Typography>
         </Card>
       )}
@@ -130,4 +130,4 @@ const Summary = () => {
   );
 };
 
-export default Summary;
+export default Paragraph;
